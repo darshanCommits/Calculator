@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(18, 18, 32);
+}
+
+.display {
+  height: 8rem;
+  background-color: white;
+  padding: 0 2%;
+}
+
+.screen {
+  height: 100%;
+  width: 100%;
+  font-size: 3rem;
+  text-align: right;
+  border: 0;
+  padding: 0;
+  caret-color: transparent;
+  overflow-x: auto;
+}
+
+.screen:focus {
+  outline: none;
+}
+
+.calcy {
+  width: max(300px, 40vw);
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.item {
+  font-family: "Ubuntu";
+
+  height: 5rem;
+  background-color: rgb(23, 23, 48);
+  color: white;
+  font-size: 2rem;
+  border: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.item:hover {
+  background-color: rgb(184, 99, 158);
+}
+
+.clear {
+  background-color: #ff2235;
+  font-style: italic;
+}
+
+.del {
+  background-color: #444;
+}
+
+.del:hover {
+  background-color: #333;
+}
+
+.clear:hover {
+  background-color: #dd0012;
+}
+
+.plus {
+  height: 10rem;
+  grid-area: 3/4 / span 2/ 4;
+}
+
+.result {
+  background-color: rgb(53, 53, 179);
+}
