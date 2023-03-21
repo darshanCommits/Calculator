@@ -68,8 +68,13 @@ body {
   background-color: #333;
 }
 
+.del img {
+  color: white;
+}
+
 .clear:hover {
   background-color: #dd0012;
+
 }
 
 .result {
