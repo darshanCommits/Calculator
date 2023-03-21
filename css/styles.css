@@ -72,11 +72,10 @@ body {
   background-color: #dd0012;
 }
 
-.plus {
-  height: 10rem;
-  grid-area: 3/4 / span 2/ 4;
-}
-
 .result {
   background-color: rgb(53, 53, 179);
+}
+
+.result:hover {
+  background-color: rgb(31, 31, 153);
 }
