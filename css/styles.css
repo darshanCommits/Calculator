@@ -7,24 +7,33 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: rgb(18, 18, 32);
+  font-family: "Ubuntu";
 }
 
 .display {
+  display: grid;
   height: 8rem;
   background-color: white;
   padding: 0 2%;
 }
 
 .screen {
-  height: 100%;
-  width: 100%;
+  height: 4.5rem;
   font-size: 3rem;
   text-align: right;
   border: 0;
-  padding: 0;
+  padding: 1%;
   caret-color: transparent;
   overflow-x: auto;
 }
+
+.answer {
+  font-size: 3rem;
+  margin: 0 0 4% 4%;
+  caret-color: transparent;
+}
+
+
 
 .screen:focus {
   outline: none;
@@ -38,10 +47,10 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  user-select: none;
 }
 
 .item {
-  font-family: "Ubuntu";
 
   height: 5rem;
   background-color: rgb(23, 23, 48);

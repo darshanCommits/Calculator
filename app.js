@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const items = document.querySelectorAll(".item");
-const screen = document.querySelector(".screen");
+const input = document.querySelector("input");
+const answer = document.querySelector(".answer");
 const del = document.querySelectorAll(".del");
 const regexPattern = /([0-9]*[.])?[0-9]+|[+-/*%^]/g;
 
@@ -59,33 +60,45 @@ function removeDuplicate(string) {
 }
 
 function variableFontSize() {
-  let area = screen.offsetHeight * screen.offsetWidth;
-  let text = screen.value.length;
-  let fontSize = Math.sqrt(area / text)/2;
-  screen.style.fontSize = fontSize + "px";
-  
+  let area = input.offsetHeight * input.offsetWidth;
+  let text = input.value.length;
+  let fontSize = Math.sqrt(area / text) / 2;
+
+  if (text === 1) fontSize -= 18;
+  input.style.fontSize = `${fontSize}px`;
 }
 
 container.addEventListener("click", (e) => {
-
   switch (e.target.innerText) {
     case "=":
-      screen.value = calculate(screen.value);
+      let ans = isNaN(calculate(input.value)) ? ans : calculate(input.value);
+      answer.innerText = ans;
       break;
 
     case "C":
-      screen.value = "";
+      input.value = "";
+      answer.innerText = "";
       break;
 
     default:
-      screen.value += e.target.innerText;
+      input.value += e.target.innerText;
       break;
   }
-  variableFontSize();
 
+  variableFontSize();
 });
 
 document.addEventListener("click", () => {
-  let ans = removeDuplicate(screen.value);
-  screen.value = ans;
+  input.value = removeDuplicate(input.value);
+
+  if (input.value.match(/(?<=\+)\d+/g)) {
+    console.log(1);
+    answer.innerText = calculate(input.value);
+  }
+});
+
+input.addEventListener("keydown", function (event) {
+  if (!regexPattern.test(event.key)) {
+    event.preventDefault();
+  }
 });
