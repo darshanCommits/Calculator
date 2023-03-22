@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 
+* {
+  transition: all ease 100ms;
+}
+
+
 body {
   height: 100vh;
   display: flex;
@@ -18,7 +23,7 @@ body {
 }
 
 .screen {
-  height: 4.5rem;
+  height: 4rem;
   font-size: 3rem;
   text-align: right;
   border: 0;
@@ -28,12 +33,9 @@ body {
 }
 
 .answer {
-  font-size: 3rem;
-  margin: 0 0 4% 4%;
+  margin-right: 5%;  
   caret-color: transparent;
 }
-
-
 
 .screen:focus {
   outline: none;
@@ -48,10 +50,10 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   user-select: none;
+  gap: 1px;
 }
 
 .item {
-
   height: 5rem;
   background-color: rgb(23, 23, 48);
   color: white;
@@ -83,7 +85,6 @@ body {
 
 .clear:hover {
   background-color: #dd0012;
-
 }
 
 .result {
